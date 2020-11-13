@@ -14,9 +14,9 @@ db.on('open', ()=>{
 
 app.use(express.json());
 
-// app.get('/', (req, res) => {
-//   res.send('All your base are belong to us');
-// });
+app.get('/', (req, res) => {
+  res.send('All your base are belong to us');
+});
 
 //app.get for all products
 app.get('/allProducts', (req, res) => {
