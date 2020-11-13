@@ -1,29 +1,81 @@
-var seedData = require('./seed_data.js');
 var mongoose = require('mongoose');
 var Gallery = require('./db/models/gallery.js');
+var db = require('./db/models/product.js');
+// import db saver - make db saver async
 
 mongoose.connect('mongodb://localhost/sadida');
 
-var seedDB = function (data) {
-  data.forEach((item) => {
-    let dbItem = {
-      productID: data['productID'],
-      uniqueID: data['uniqueID'],
-      color: data['color'],
-      price: data['price'],
-      salesPrice: data['salesPrice'],
-      stars: data['stars'],
-      numRatings: data['numRatings'],
-      images: data['images']
-    };
-    Gallery.insertGallery(dbItem, (err, results) => {
+const nmd = [
+  {
+    color: 'Collegiate Navy / Scarlet / Cloud White',
+    images: ['https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/nmd_rwb/NMD_R1_Shoes_Blue_FV1734_01_standard.jpg', 'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/nmd_rwb/NMD_R1_Shoes_Blue_FV1734_010_hover_standard.jpg', 'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/nmd_rwb/NMD_R1_Shoes_Blue_FV1734_02_standard.jpg', 'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/nmd_rwb/NMD_R1_Shoes_Blue_FV1734_03_standard.jpg', 'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/nmd_rwb/NMD_R1_Shoes_Blue_FV1734_04_standard.jpg', 'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/nmd_rwb/NMD_R1_Shoes_Blue_FV1734_05_standard.jpg', 'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/nmd_rwb/NMD_R1_Shoes_Blue_FV1734_06_standard.jpg', 'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/nmd_rwb/NMD_R1_Shoes_Blue_FV1734_41_detail.jpg', 'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/nmd_rwb/NMD_R1_Shoes_Blue_FV1734_42_detail.jpg', 'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/nmd_rwb/NMD_R1_Shoes_Blue_FV1734_43_detail.jpg']
+  },
+  {
+    color: 'Grey Four / Grey Four / Core Black',
+    images: ['https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/nmd_black/NMD_R1_Shoes_Grey_FV1733_01_standard.jpg', 'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/nmd_black/NMD_R1_Shoes_Grey_FV1733_010_hover_standard.jpg', 'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/nmd_black/NMD_R1_Shoes_Grey_FV1733_02_standard.jpg', 'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/nmd_black/NMD_R1_Shoes_Grey_FV1733_03_standard.jpg', 'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/nmd_black/NMD_R1_Shoes_Grey_FV1733_04_standard.jpg', 'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/nmd_black/NMD_R1_Shoes_Grey_FV1733_05_standard.jpg', 'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/nmd_black/NMD_R1_Shoes_Grey_FV1733_06_standard.jpg', 'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/nmd_black/NMD_R1_Shoes_Grey_FV1733_41_detail.jpg', 'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/nmd_black/NMD_R1_Shoes_Grey_FV1733_42_detail.jpg', 'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/nmd_black/NMD_R1_Shoes_Grey_FV1733_43_detail.jpg']
+  },
+  {
+    color: 'Core Black / Supplier Colour / Core Black',
+    images: ['https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/nmd_pur/NMD_R1_Shoes_Black_FV8732_01_standard.jpg', 'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/nmd_pur/NMD_R1_Shoes_Black_FV8732_010_hover_standard.jpg', 'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/nmd_pur/NMD_R1_Shoes_Black_FV8732_02_standard.jpg', 'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/nmd_pur/NMD_R1_Shoes_Black_FV8732_03_standard.jpg', 'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/nmd_pur/NMD_R1_Shoes_Black_FV8732_04_standard.jpg', 'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/nmd_pur/NMD_R1_Shoes_Black_FV8732_05_standard.jpg', 'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/nmd_pur/NMD_R1_Shoes_Black_FV8732_06_standard.jpg', 'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/nmd_pur/NMD_R1_Shoes_Black_FV8732_41_detail.jpg', 'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/nmd_pur/NMD_R1_Shoes_Black_FV8732_42_detail.jpg', 'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/nmd_pur/NMD_R1_Shoes_Black_FV8732_43_detail.jpg']
+  }
+];
+
+const ss = [
+  {
+    color: 'Cloud White / Blue / Gum',
+    images: ['https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/ss_blue/Stan_Smith_Shoes_White_FU9600_01_standard.jpg', 'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/ss_blue/Stan_Smith_Shoes_White_FU9600_010_hover_standard.jpg', 'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/ss_blue/Stan_Smith_Shoes_White_FU9600_02_standard.jpg', 'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/ss_blue/Stan_Smith_Shoes_White_FU9600_03_standard.jpg', 'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/ss_blue/Stan_Smith_Shoes_White_FU9600_04_standard.jpg', 'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/ss_blue/Stan_Smith_Shoes_White_FU9600_05_standard.jpg', 'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/ss_blue/Stan_Smith_Shoes_White_FU9600_06_standard.jpg', 'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/ss_blue/Stan_Smith_Shoes_White_FU9600_41_detail.jpg', 'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/ss_blue/Stan_Smith_Shoes_White_FU9600_42_detail.jpg', 'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/ss_blue/Stan_Smith_Shoes_White_FU9600_43_detail.jpg']
+  },
+  {
+    color: 'Cloud White / Green / Gum',
+    images: ['https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/ss_green/Stan_Smith_Shoes_White_FU9599_01_standard.jpg', 'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/ss_green/Stan_Smith_Shoes_White_FU9599_010_hover_standard.jpg', 'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/ss_green/Stan_Smith_Shoes_White_FU9599_02_standard.jpg', 'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/ss_green/Stan_Smith_Shoes_White_FU9599_03_standard.jpg', 'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/ss_green/Stan_Smith_Shoes_White_FU9599_04_standard.jpg', 'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/ss_green/Stan_Smith_Shoes_White_FU9599_05_standard.jpg', 'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/ss_green/Stan_Smith_Shoes_White_FU9599_06_standard.jpg', 'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/ss_green/Stan_Smith_Shoes_White_FU9599_41_detail.jpg', 'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/ss_green/Stan_Smith_Shoes_White_FU9599_42_detail.jpg', 'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/ss_green/Stan_Smith_Shoes_White_FU9599_43_detail.jpg']
+  }
+];
+
+const backpack = [
+  {
+    color: 'Signal Orange',
+    images: ['https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/backpack/Utility_Backpack_Orange_EV7559_01_standard.jpg', 'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/backpack/Utility_Backpack_Orange_EV7559_02_standard.jpg', 'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/backpack/Utility_Backpack_Orange_EV7559_04_standard.jpg', 'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/backpack/Utility_Backpack_Orange_EV7559_05_hover_standard.jpg', 'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/backpack/Utility_Backpack_Orange_EV7559_41_detail.jpg', 'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/backpack/Utility_Backpack_Orange_EV7559_42_detail.jpg', 'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/backpack/Utility_Backpack_Orange_EV7559_43_detail.jpg']
+  }
+];
+
+const imageArrays = [nmd, ss, backpack];
+
+const createProduct = function(id) {
+  let product = {
+    productID: id,
+    variants: []
+  };
+  // product id is id
+  // variants: []
+  // pick a random index [i] from image arrays
+  let productIndex = id % 3;
+  // pick a random number [j] based on selected index length
+  let numVariants = (id % imageArrays[productIndex].length) + 1;
+  // push j elements of array at index i into images
+  for (let i = 0; i < num variants; i++) {
+    product.variants.push(imageArrays[productIndex][i]);
+  }
+
+}
+
+const seedDB = async function (numRecords) { // make this async
+  // initiate a count at 0
+  let count = 1;
+  // while the count is less than num records keep going
+  while (count <= numRecords) {
+    let dbProduct = createProduct(count);
+    await db.insertProduct(dbProduct, (err) => {
       if (err) {
         console.log(err);
       } else {
-        console.log(`${results} inserted`);
+        console.log('product inserted');
       }
-    });
-  });
+    })
+    count++;
+  }
+    // run create product
+    // run and await dbsaver
+    // increment count by 1
 };
 
 seedDB(seedData);

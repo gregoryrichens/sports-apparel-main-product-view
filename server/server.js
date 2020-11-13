@@ -2,7 +2,7 @@ const express = require('express');
 var mongoose = require('mongoose');
 
 const app = express();
-const PORT = 3000;
+const PORT = 3002;
 
 mongoose.connect('mongodb://localhost/sadida');
 var db = mongoose.connection;
