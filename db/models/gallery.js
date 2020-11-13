@@ -3,9 +3,9 @@ var mongoose = require('mongoose');
 const gallerySchema = new mongoose.Schema({
   _id: Schema.ObjectId,
   productID: String,
-  itemID: String,
+  uniqueID: String,
   color: String,
-  images: [{mainUrl: String, thumbnail: String, description: String}]
+  images: [{mainUrl: String, description: String}]
 });
 
 const Gallery = mongoose.model('Gallery', gallerySchema);
@@ -21,10 +21,10 @@ var findProduct = function (id, callback) {
   }, callback);
 };
 
-//takes an item ID: these are unique in the database
+//takes an unique ID: these are unique in the database
 var findItem = function (id, callback) {
   Gallery.find({
-    itemID: id
+    uniqueID: id
   }, callback);
 };
 
