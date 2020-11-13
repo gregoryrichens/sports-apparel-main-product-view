@@ -1,5 +1,4 @@
 var mongoose = require('mongoose');
-var Gallery = require('./db/models/gallery.js');
 var db = require('./db/models/product.js');
 // import db saver - make db saver async
 
@@ -50,20 +49,21 @@ const createProduct = function(id) {
   // pick a random index [i] from image arrays
   let productIndex = id % 3;
   // pick a random number [j] based on selected index length
-  let numVariants = (id % imageArrays[productIndex].length) + 1;
+  let numVariants = Math.ceil(Math.random() * imageArrays[productIndex].length);
   // push j elements of array at index i into images
-  for (let i = 0; i < num variants; i++) {
+  for (let i = 0; i < numVariants; i++) {
     product.variants.push(imageArrays[productIndex][i]);
   }
-
+  return product;
 }
 
 const seedDB = async function (numRecords) { // make this async
-  // initiate a count at 0
+  // initiate a count at 1
   let count = 1;
   // while the count is less than num records keep going
   while (count <= numRecords) {
     let dbProduct = createProduct(count);
+    console.log(dbProduct);
     await db.insertProduct(dbProduct, (err) => {
       if (err) {
         console.log(err);
@@ -73,9 +73,11 @@ const seedDB = async function (numRecords) { // make this async
     })
     count++;
   }
+
+  mongoose.disconnect;
     // run create product
     // run and await dbsaver
     // increment count by 1
 };
 
-seedDB(seedData);
+seedDB(100);
