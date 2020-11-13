@@ -5,6 +5,10 @@ const gallerySchema = new mongoose.Schema({
   productID: String,
   uniqueID: String,
   color: String,
+  price: Number,
+  salesPrice: Number,
+  stars: Number,
+  numRatings: Number,
   images: [{mainUrl: String, description: String}]
 });
 

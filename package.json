@@ -1,6 +1,6 @@
 {
   "name": "track-pinch-zoom",
-  "version": "1.0",
+  "version": "",
   "description": "main product viewer component and carousel",
   "author": "Gregory Richens",
   "license": "MIT",
@@ -9,7 +9,7 @@
   },
   "scripts": {
     "seed-database": "node seed.js",
-    "start": "nodemon server/inex.js",
+    "start": "nodemon server/server.js",
     "transpile": "webpack -d --watch"
   },
   "dependencies": {
