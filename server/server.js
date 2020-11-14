@@ -5,13 +5,20 @@ var Product = require('../db/models/product.js');
 const app = express();
 const PORT = 3002;
 
-mongoose.connect('mongodb://localhost/sadida');
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error'));
-db.on('open', ()=>{
-  console.log('db connected');
-});
+mongoose.connect('mongodb://localhost/sadida')
+  .then(() => {
+    console.log('db connected');
+  })
+  .catch((err) => {
+    console.error('connection error');
+  });
+// var db = mongoose.connection;
+// db.on('error', console.error.bind(console, 'connection error'));
+// db.on('open', ()=>{
+//   console.log('db connected');
+// });
 
+app.use(express.static('public'));
 app.use(express.json());
 
 app.get('/', (req, res) => {
