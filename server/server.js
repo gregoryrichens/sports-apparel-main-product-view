@@ -1,6 +1,6 @@
 const express = require('express');
-var mongoose = require('mongoose');
-var Product = require('../db/models/product.js');
+const mongoose = require('mongoose');
+const Product = require('../db/models/product.js');
 
 const app = express();
 const PORT = 3002;
@@ -9,7 +9,7 @@ mongoose.connect('mongodb://localhost/sadida')
   .then(() => {
     console.log('db connected');
   })
-  .catch((err) => {
+  .catch(() => {
     console.error('connection error');
   });
 // var db = mongoose.connection;
@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
   res.send('All your base are belong to us');
 });
 
-//app.get for all products
+// app.get for all products
 app.get('/allProducts', (req, res) => {
   Product.findAll((err, results) => {
     if (err) {
@@ -36,7 +36,7 @@ app.get('/allProducts', (req, res) => {
   });
 });
 
-//app.get for one product
+// app.get for one product
 app.get('/oneProduct', (req, res) => {
   Product.findOne((err, results) => {
     if (err) {
