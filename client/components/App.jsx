@@ -1,8 +1,18 @@
 import React from 'react';
+import MainView from './MainView.jsx';
+import ColorPicker from './ColorPicker.jsx';
 
-const App = function (props) {
+const App = function App(props) {
   return (
-    <h1>All your base are belong to us</h1>
+    <div>
+      <p>Is this your {props.data}?!</p>
+      <div>
+        <MainView />
+      </div>
+      <div>
+        <ColorPicker />
+      </div>
+    </div>
   );
 };
 

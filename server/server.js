@@ -7,9 +7,11 @@ const PORT = 3002;
 
 mongoose.connect('mongodb://localhost/sadida')
   .then(() => {
+    // eslint-disable-next-line no-console
     console.log('db connected');
   })
   .catch(() => {
+    // eslint-disable-next-line no-console
     console.error('connection error');
   });
 // var db = mongoose.connection;
@@ -48,5 +50,6 @@ app.get('/oneProduct', (req, res) => {
 });
 
 app.listen(PORT, () => {
+  // eslint-disable-next-line no-console
   console.log(`Taking off every zig at http://localhost:${PORT}`);
 });
