@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ColorPickerItem from './ColorPickerItem.jsx';
 
-const ColorPicker = function ColorPicker(props) {
+const ColorPicker = function ColorPicker({ variants }) {
   return (
   <div>
-    <h5>{props.variants.length} Colors Available</h5>
+    <h5>{variants.length} Colors Available</h5>
     <div>
-      {props.variants.map((variant, index) => <ColorPickerItem
+      {variants.map((variant, index) => <ColorPickerItem
         image={variant.images[0]} key={index} />)}
     </div>
   </div>
@@ -16,6 +16,7 @@ const ColorPicker = function ColorPicker(props) {
 
 ColorPicker.propTypes = {
   variants: PropTypes.array,
+  setVariant: PropTypes.func,
 };
 
 export default ColorPicker;

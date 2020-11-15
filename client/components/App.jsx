@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import MainView from './MainView.jsx';
 import ColorPicker from './ColorPicker.jsx';
@@ -21,11 +21,11 @@ const App = function App({ data }) {
         {/* consumes method for incrementing index state */}
         <RightArrow />
         {/* consumes products[current variant] && index */}
-        <NavBar variant={data.variants[variant]} index={currIndex}/>
+        <NavBar variant={data.variants[variant]} index={currIndex} />
       </div>
       <div>
         {/* consumes prdoucts and displays image 0 for each */}
-        <ColorPicker variants={data.variants}/>
+        <ColorPicker variants={data.variants} />
       </div>
     </div>
   );
@@ -36,3 +36,33 @@ App.propTypes = {
 };
 
 export default App;
+
+// const incrementIndex = useCallback(() => {
+//   let newIndex;
+//   // if index + 1 equals the length of the images array set it to 0
+//   if ((currIndex + 1) === data.variants[variant].images.length) {
+//     newIndex = 0;
+//   } else {
+//     newIndex = currIndex + 1;
+//   }
+//   setCurrIndex(newIndex);
+// }, [currIndex]);
+
+// const decrementIndex = useCallback(() => {
+//   let newIndex;
+//   // if index + 1 equals the length of the images array set it to 0
+//   if ((currIndex - 1) < 0) {
+//     newIndex = data.variants[variant].images.length - 1;
+//   } else {
+//     newIndex = currIndex - 1;
+//   }
+//   setCurrIndex(newIndex);
+// }, [currIndex]);
+
+// const changeIndex = useCallback((index) => {
+//   setCurrIndex(index);
+// }, []);
+
+// const changeVariant = useCallback((index) => {
+//   setVariant(index);
+// }, []);

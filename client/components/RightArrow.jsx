@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 const RightArrow = function RightArrow() {
   return (
     <button>
-      {/* method for decrementing index inserted into button's onClick */}
       Right Arrow
       <svg>
       </svg>
@@ -13,7 +12,7 @@ const RightArrow = function RightArrow() {
 };
 
 RightArrow.propTypes = {
-  increment: PropTypes.function,
+  increment: PropTypes.func,
 };
 
 export default RightArrow;
