@@ -1,0 +1,52 @@
+module.exports = {
+  _id: '5fae48d1a4614f21f08d5154',
+  variants: [
+    {
+      color: 'Collegiate Navy / Scarlet / Cloud White',
+      images: [
+        'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/nmd_rwb/NMD_R1_Shoes_Blue_FV1734_01_standard.jpg',
+        'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/nmd_rwb/NMD_R1_Shoes_Blue_FV1734_010_hover_standard.jpg',
+        'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/nmd_rwb/NMD_R1_Shoes_Blue_FV1734_02_standard.jpg',
+        'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/nmd_rwb/NMD_R1_Shoes_Blue_FV1734_03_standard.jpg',
+        'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/nmd_rwb/NMD_R1_Shoes_Blue_FV1734_04_standard.jpg',
+        'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/nmd_rwb/NMD_R1_Shoes_Blue_FV1734_05_standard.jpg',
+        'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/nmd_rwb/NMD_R1_Shoes_Blue_FV1734_06_standard.jpg',
+        'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/nmd_rwb/NMD_R1_Shoes_Blue_FV1734_41_detail.jpg',
+        'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/nmd_rwb/NMD_R1_Shoes_Blue_FV1734_42_detail.jpg',
+        'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/nmd_rwb/NMD_R1_Shoes_Blue_FV1734_43_detail.jpg',
+      ],
+    },
+    {
+      color: 'Grey Four / Grey Four / Core Black',
+      images: [
+        'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/nmd_black/NMD_R1_Shoes_Grey_FV1733_01_standard.jpg',
+        'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/nmd_black/NMD_R1_Shoes_Grey_FV1733_010_hover_standard.jpg',
+        'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/nmd_black/NMD_R1_Shoes_Grey_FV1733_02_standard.jpg',
+        'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/nmd_black/NMD_R1_Shoes_Grey_FV1733_03_standard.jpg',
+        'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/nmd_black/NMD_R1_Shoes_Grey_FV1733_04_standard.jpg',
+        'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/nmd_black/NMD_R1_Shoes_Grey_FV1733_05_standard.jpg',
+        'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/nmd_black/NMD_R1_Shoes_Grey_FV1733_06_standard.jpg',
+        'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/nmd_black/NMD_R1_Shoes_Grey_FV1733_41_detail.jpg',
+        'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/nmd_black/NMD_R1_Shoes_Grey_FV1733_42_detail.jpg',
+        'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/nmd_black/NMD_R1_Shoes_Grey_FV1733_43_detail.jpg',
+      ],
+    },
+    {
+      color: 'Core Black / Supplier Colour / Core Black',
+      images: [
+        'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/nmd_pur/NMD_R1_Shoes_Black_FV8732_01_standard.jpg',
+        'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/nmd_pur/NMD_R1_Shoes_Black_FV8732_010_hover_standard.jpg',
+        'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/nmd_pur/NMD_R1_Shoes_Black_FV8732_02_standard.jpg',
+        'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/nmd_pur/NMD_R1_Shoes_Black_FV8732_03_standard.jpg',
+        'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/nmd_pur/NMD_R1_Shoes_Black_FV8732_04_standard.jpg',
+        'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/nmd_pur/NMD_R1_Shoes_Black_FV8732_05_standard.jpg',
+        'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/nmd_pur/NMD_R1_Shoes_Black_FV8732_06_standard.jpg',
+        'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/nmd_pur/NMD_R1_Shoes_Black_FV8732_41_detail.jpg',
+        'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/nmd_pur/NMD_R1_Shoes_Black_FV8732_42_detail.jpg',
+        'https://myfecbucket.s3-us-west-1.amazonaws.com/fec+pictures/nmd_pur/NMD_R1_Shoes_Black_FV8732_43_detail.jpg',
+      ],
+    },
+  ],
+  productID: 21,
+  __v: 0,
+};

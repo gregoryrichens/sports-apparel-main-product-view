@@ -1,9 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const MainView = function MainView() {
+const MainView = function MainView(props) {
   return (
-  <p>All ur b4s3</p>
+  <div>
+    <img src={props.image}/>
+  </div>
   );
+};
+
+MainView.propTypes = {
+  image: PropTypes.string,
 };
 
 export default MainView;
