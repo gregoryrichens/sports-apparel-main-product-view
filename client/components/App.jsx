@@ -14,6 +14,10 @@ const App = function App({ data }) {
     setCurrIndex(newIndex);
   };
 
+  const changeVariant = function changeVariant(newVariant) {
+    setVariant(newVariant);
+  };
+
   return (
     <div>
       <p>you have no chance to survive make your time ha ha ha</p>
@@ -31,7 +35,7 @@ const App = function App({ data }) {
       </div>
       <div>
         {/* consumes prdoucts and displays image 0 for each */}
-        <ColorPicker variants={data.variants} />
+        <ColorPicker variants={data.variants} method={changeVariant}/>
       </div>
     </div>
   );
