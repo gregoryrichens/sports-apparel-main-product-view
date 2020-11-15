@@ -1,29 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import axios from 'axios';
 import MainView from './MainView.jsx';
 import ColorPicker from './ColorPicker.jsx';
 import LeftArrow from './LeftArrow.jsx';
 import RightArrow from './RightArrow.jsx';
 import NavBar from './NavBar.jsx';
 
-// would need to add a fetch method
-// state for index
-// state for current variant
-// state for products
-
 const App = function App({ data }) {
   const [currIndex, setCurrIndex] = useState(0);
   const [variant, setVariant] = useState(0);
-
-  // const fetchProduct = function fetchProduct() {
-  //   axios.get('/oneProduct')
-  //     .then((response) => {
-  //       setProduct(response.data);
-  //       console.log(response.data);
-  //     })
-  //     .catch((error) => console.log(error));
-  // };
 
   return (
     <div>
