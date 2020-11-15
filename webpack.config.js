@@ -1,7 +1,7 @@
 const path = require('path');
 // let webpack = require('webpack');
 
-const BUILD_DIR = path.resolve(__dirname, 'public'); // where we will place our bundled file
+const BUILD_DIR = path.resolve(__dirname, 'public/dist/'); // where we will place our bundled file
 const APP_DIR = path.resolve(__dirname, 'client'); // where the components we are bundling live
 
 module.exports = {

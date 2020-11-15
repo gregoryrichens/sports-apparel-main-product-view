@@ -14,7 +14,7 @@ import NavBar from './NavBar.jsx';
 const App = function App(props) {
   return (
     <div>
-      <p>You have no chance to survive make your time</p>
+      <p>you have no chance to survive make your time ha ha ha</p>
       <div>
         {/* consumes current products[current variant][index] */}
         <MainView image={props.data.variants[0].images[0]}/>
