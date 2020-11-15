@@ -1,9 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const NavBarItem = function NavBarItem({ image }) {
+const NavBarItem = function NavBarItem({ image, index, method }) {
+  const changeIndex = function changeIndex(newIndex) {
+    method(newIndex);
+  };
+
   return (
-    <button>
+    <button onClick={() => changeIndex(index)}>
       <img src={image}/>
     </button>
   );
@@ -11,8 +15,8 @@ const NavBarItem = function NavBarItem({ image }) {
 
 NavBarItem.propTypes = {
   image: PropTypes.string,
-  setIndex: PropTypes.func,
   index: PropTypes.number,
+  method: PropTypes.func,
 };
 
 export default NavBarItem;

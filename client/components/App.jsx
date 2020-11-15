@@ -10,6 +10,10 @@ const App = function App({ data }) {
   const [currIndex, setCurrIndex] = useState(0);
   const [variant, setVariant] = useState(0);
 
+  const changeIndex = function changeIndex(newIndex) {
+    setCurrIndex(newIndex);
+  };
+
   return (
     <div>
       <p>you have no chance to survive make your time ha ha ha</p>
@@ -21,7 +25,7 @@ const App = function App({ data }) {
         {/* consumes method for incrementing index state */}
         <RightArrow />
         {/* consumes products[current variant] && index */}
-        <NavBar variant={data.variants[variant]} index={currIndex} />
+        <NavBar variant={data.variants[variant]} index={currIndex} method={changeIndex}/>
       </div>
       <div>
         {/* consumes prdoucts and displays image 0 for each */}
