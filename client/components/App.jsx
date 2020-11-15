@@ -21,9 +21,11 @@ const App = function App({ data }) {
         {/* consumes current products[current variant][index] */}
         <MainView image={data.variants[variant].images[currIndex]}/>
         {/* consumes method for decrementing index state */}
-        <LeftArrow />
+        <LeftArrow
+          method={changeIndex} index={currIndex} length={data.variants[variant].images.length}/>
         {/* consumes method for incrementing index state */}
-        <RightArrow />
+        <RightArrow
+          method={changeIndex} index={currIndex} length={data.variants[variant].images.length}/>
         {/* consumes products[current variant] && index */}
         <NavBar variant={data.variants[variant]} index={currIndex} method={changeIndex}/>
       </div>
