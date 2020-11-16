@@ -1,10 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const RightArrow = function RightArrow() {
+const RightArrow = function RightArrow({ method, index, length }) {
+  const increment = function increment() {
+    if (index === (length - 1)) {
+      method(0);
+    } else {
+      method(index + 1);
+    }
+  };
+
   return (
-    <button>
-      {/* method for decrementing index inserted into button's onClick */}
+    <button onClick={() => increment()}>
       Right Arrow
       <svg>
       </svg>
@@ -13,7 +20,9 @@ const RightArrow = function RightArrow() {
 };
 
 RightArrow.propTypes = {
-  increment: PropTypes.function,
+  method: PropTypes.func,
+  index: PropTypes.number,
+  length: PropTypes.number,
 };
 
 export default RightArrow;

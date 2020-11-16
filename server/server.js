@@ -44,7 +44,7 @@ app.get('/oneProduct', (req, res) => {
     if (err) {
       res.sendStatus(404);
     } else {
-      res.json(results);
+      res.json(results[0]);
     }
   });
 });

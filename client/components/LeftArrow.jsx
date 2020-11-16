@@ -1,10 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const LeftArrow = function LeftArrow() {
+const LeftArrow = function LeftArrow({ method, index, length }) {
+  const decrement = function decrement() {
+    if (index === 0) {
+      method(length - 1);
+    } else {
+      method(index - 1);
+    }
+  };
+
   return (
-    <button>
-      {/* method for decrementing index inserted into button's onClick */}
+    <button onClick={() => decrement()}>
       Left Arrow
       <svg>
       </svg>
@@ -13,7 +20,9 @@ const LeftArrow = function LeftArrow() {
 };
 
 LeftArrow.propTypes = {
-  decrement: PropTypes.function,
+  method: PropTypes.func,
+  index: PropTypes.number,
+  length: PropTypes.number,
 };
 
 export default LeftArrow;
