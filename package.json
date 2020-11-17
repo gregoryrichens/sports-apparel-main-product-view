@@ -16,7 +16,7 @@
     "start": "nodemon server/server.js",
     "transpile-dev": "webpack",
     "transpile": "NODE_ENV='production' webpack",
-    "test-db": "jest --detectOpenHandles ./spec/product-insert.test.js"
+    "test": "jest"
   },
   "dependencies": {
     "axios": "^0.21.0",

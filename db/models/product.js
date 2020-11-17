@@ -12,9 +12,9 @@ const findAll = function findAll(callback) {
 };
 
 const findOne = function findOne(callback) {
-  const id = Math.ceil(Math.random() * 100);
+  // const id = Math.ceil(Math.random() * 100);
   Product.find({
-    productID: id,
+    productID: 21,
   }, callback);
 };
 

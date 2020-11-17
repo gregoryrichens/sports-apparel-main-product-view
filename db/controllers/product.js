@@ -19,7 +19,7 @@ const oneProduct = (req, res) => {
     if (err) {
       res.sendStatus(404);
     } else {
-      res.json(results[0]);
+      res.json(results);
     }
   });
 };

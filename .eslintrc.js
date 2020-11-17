@@ -11,6 +11,7 @@ module.exports = {
     es6: true,
     node: true,
     'jest/globals': true,
+    // 'supertest/globals': true,
   },
   extends: [
     'airbnb-base',
@@ -27,10 +28,11 @@ module.exports = {
     },
   },
   rules: {
+    'jest/prefer-expect-assertions': false,
     'jest/no-hooks': [
       'error',
       {
-        allow: ['beforeAll', 'afterEach', 'afterAll'],
+        allow: ['beforeEach', 'beforeAll', 'afterEach', 'afterAll'],
       },
     ],
   },
