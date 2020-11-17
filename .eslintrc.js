@@ -9,18 +9,31 @@ module.exports = {
   env: {
     browser: true,
     es6: true,
+    node: true,
+    'jest/globals': true,
+    // 'supertest/globals': true,
   },
   extends: [
     'airbnb-base',
     'plugin:react/recommended',
     'plugin:import/errors',
     'plugin:import/warnings',
+    'plugin:jest/all',
   ],
   parserOptions: {
     sourceType: 'module',
-    ecmaVersion: 6,
+    ecmaVersion: 2017,
     ecmaFeatures: {
       jsx: true,
     },
+  },
+  rules: {
+    'jest/prefer-expect-assertions': false,
+    'jest/no-hooks': [
+      'error',
+      {
+        allow: ['beforeEach', 'beforeAll', 'afterEach', 'afterAll'],
+      },
+    ],
   },
 };
