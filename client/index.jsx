@@ -5,7 +5,7 @@ import App from './components/App.jsx';
 
 const dummyData = require('../dummyData.js');
 
-// axios.get('/oneProduct')
+// axios.get('/products/oneProduct')
 //   .then((response) => {
 //     ReactDOM.render(<App data={response.data}/>, document.getElementById('app'));
 //   })

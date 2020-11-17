@@ -21,7 +21,7 @@ describe('db test suite', () => {
   });
 
   describe('product', () => {
-    it('can be created correctly', async () => {
+    it('can create a db entry without throwing an error', async () => {
       expect.hasAssertions();
       expect(async () => model.insertProduct(sampleProduct))
         .not

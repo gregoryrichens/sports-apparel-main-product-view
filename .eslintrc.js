@@ -26,4 +26,12 @@ module.exports = {
       jsx: true,
     },
   },
+  rules: {
+    'jest/no-hooks': [
+      'error',
+      {
+        allow: ['beforeAll', 'afterEach', 'afterAll'],
+      },
+    ],
+  },
 };

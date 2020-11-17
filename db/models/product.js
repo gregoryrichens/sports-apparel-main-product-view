@@ -19,7 +19,9 @@ const findOne = function findOne(callback) {
 };
 
 const insertProduct = async function insertProduct(product) {
-  await Product.create(product);
+  await Product.create(product)
+    .then(console.log('product inserted'))
+    .catch((err) => console.error(err));
 };
 
 module.exports.findAll = findAll;
