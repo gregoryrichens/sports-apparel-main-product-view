@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import MainView from './MainView.jsx';
 import ColorPicker from './ColorPicker.jsx';
 import LeftArrow from './LeftArrow.jsx';
@@ -18,10 +19,23 @@ const App = function App({ data }) {
     setVariant(newVariant);
   };
 
+  const GalleryContainer = styled.div`
+    box-sizing: border-box;
+    display: flex;
+    font-style: normal;
+    font-weight: 400;
+    color: #000;
+    text-rendering: optimizeLegibility;
+    text-transform: none;
+    width: 75vw;
+    background-color: #ebeef0;
+    justify-content: center;
+  `;
+
   return (
     <div>
       <p>you have no chance to survive make your time ha ha ha</p>
-      <div>
+      <GalleryContainer>
         {/* consumes current products[current variant][index] */}
         <MainView image={data.variants[variant].images[currIndex]}/>
         {/* consumes method for decrementing index state */}
@@ -32,7 +46,7 @@ const App = function App({ data }) {
           method={changeIndex} index={currIndex} length={data.variants[variant].images.length}/>
         {/* consumes products[current variant] && index */}
         <NavBar variant={data.variants[variant]} index={currIndex} method={changeIndex}/>
-      </div>
+      </GalleryContainer>
       <div>
         {/* consumes prdoucts and displays image 0 for each */}
         <ColorPicker variants={data.variants} method={changeVariant}/>
