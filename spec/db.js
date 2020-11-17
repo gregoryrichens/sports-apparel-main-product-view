@@ -5,10 +5,11 @@ const { MongoMemoryServer } = require('mongodb-memory-server');
 const mongod = new MongoMemoryServer();
 
 const connect = async function connect() {
-  const uri = await mongod.getConnectionString();
+  const uri = await mongod.getUri();
 
   const mongooseOpts = {
     useNewUrlParser: true,
+    useUnifiedTopology: true,
     autoReconnect: true,
     reconnectTries: Number.MAX_VALUE,
     reconnectInterval: 1000,
@@ -19,8 +20,8 @@ const connect = async function connect() {
 
 const closeDatabase = async function closeDatabase() {
   await mongoose.connection.dropDatabase();
-  await mongoose.connetion.close();
-  await mongod.stop;
+  await mongoose.connection.close();
+  await mongod.stop();
 };
 
 const clearDatabase = async function clearDatabase() {

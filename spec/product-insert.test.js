@@ -7,7 +7,7 @@ const sampleProduct = {
   variants: dummyData.variants,
 };
 
-describe('product', () => {
+describe('db test suite', () => {
   beforeAll(async () => {
     await db.connect();
   });
@@ -20,9 +20,12 @@ describe('product', () => {
     await db.closeDatabase();
   });
 
-  it('can be created correctly', async () => {
-    expect(async () => model.create(sampleProduct))
-      .not
-      .toThrow();
+  describe('product', () => {
+    it('can be created correctly', async () => {
+      expect.hasAssertions();
+      expect(async () => model.insertProduct(sampleProduct))
+        .not
+        .toThrow();
+    });
   });
 });

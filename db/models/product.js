@@ -18,8 +18,8 @@ const findOne = function findOne(callback) {
   }, callback);
 };
 
-const insertProduct = async function insertProduct(product, callback) {
-  Product.create(product, callback);
+const insertProduct = async function insertProduct(product) {
+  await Product.create(product);
 };
 
 module.exports.findAll = findAll;
