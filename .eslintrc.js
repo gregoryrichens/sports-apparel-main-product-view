@@ -28,7 +28,7 @@ module.exports = {
     },
   },
   rules: {
-    'jest/prefer-expect-assertions': false,
+    'jest/prefer-expect-assertions': 0,
     'jest/no-hooks': [
       'error',
       {
