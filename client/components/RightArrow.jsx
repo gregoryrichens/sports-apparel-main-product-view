@@ -3,11 +3,8 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const RightScroll = styled.button`
-  right: 30px;
-  visibility: visible;
-  background-color: #fff;
-  border: 1px solid #000;
   position: absolute;
+  right: 30px;
   height: 50px;
   width: 50px;
   top: 50%;
@@ -16,6 +13,9 @@ const RightScroll = styled.button`
   align-items: center;
   color: #000;
   display: flex;
+  visibility: visible;
+  background-color: #fff;
+  border: 1px solid #000;
   margin: 0;
   border-radius: 0;
   box-shadow: none;
@@ -23,6 +23,7 @@ const RightScroll = styled.button`
   touch-action: manipulation;
   opacity: 1;
   transition: opacity .4s ease;
+  user-select: none;
 `;
 
 const RightArrow = function RightArrow({ method, index, length }) {
@@ -36,8 +37,10 @@ const RightArrow = function RightArrow({ method, index, length }) {
 
   return (
     <RightScroll onClick={() => increment()}>
-      Right Arrow
-      <svg>
+      <svg id='arrow-right-long' width='1.5rem' height='1.5rem' viewBox='0 0 24 24'>
+        <title>arrow-right-long</title>
+        <path d='M17.59 7l5 5-5 5M0 12h22' fill='none' stroke='currentColor' strokeMiterlimit='10' strokeWidth='2'>
+        </path>
       </svg>
     </RightScroll>
   );

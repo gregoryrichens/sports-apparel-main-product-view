@@ -21,13 +21,13 @@ const View = styled.div`
   background-color: #edeff0;
   visibility: visible;
   position: relative;
-  left: -100%;
   text-align: center;
 `;
 
 const MainImage = styled.img`
   position: absolute;
   height: 100%;
+  min-width: 600px;
   visibility: visible;
   left: 0;
   right: 0;
@@ -42,8 +42,6 @@ const MainView = function MainView(props) {
     <View>
       <MainImage
         src={props.image}
-        sizes={'(max-width: 840px) 840px'}
-        srcset={`${props.image} 840w`}
       />
     </View>
   </Views>

@@ -16,6 +16,9 @@ const Content = styled.div`
 
 const TrackPinch = styled.div`
     display: block;
+    * {
+      box-sizing: border-box;
+    }
   `;
 
 const GallerySection = styled.div`
@@ -69,7 +72,7 @@ const App = function App({ data }) {
           <p>you have no chance to survive make your time ha ha ha</p>
           <TargetGallery>
             <ImageViewer>
-              <Expander>
+              <Expander className="Expander">
                 <MainView image={data.variants[variant].images[currIndex]}/>
                 <LeftArrow
                   method={changeIndex}

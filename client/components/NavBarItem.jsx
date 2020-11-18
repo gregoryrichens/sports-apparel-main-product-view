@@ -6,6 +6,9 @@ const Thumbnail = styled.button`
   width: 24px;
   height: 24px;
   margin: 5px;
+  border-left: none;
+  border-top: none;
+  border-right: none;
   border-bottom: 1px solid #000;
   position: relative;
   overflow: hidden;
@@ -24,11 +27,14 @@ const ThumbnailImage = styled.img`
   width: 100%;
   height: 100%;
   border: 1px solid #000;
-  transition: transform .2s ease;
-  transform: translateY(100%);
   box-sizing: border-box;
   visibility: visible;
   pointer-events: all;
+  transition: transform .2s ease;
+  transform: translateY(100%);
+  .Expander:hover &{
+    transform: translateY(0);
+  }
 `;
 
 const NavBarItem = function NavBarItem({ image, index, method }) {
