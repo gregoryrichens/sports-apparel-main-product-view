@@ -18,6 +18,7 @@ const Thumbnail = styled.button`
   touch-action: manipulation;
   box-sizing: border-box;
   visibility: visible;
+  background: none;
 `;
 
 const ThumbnailImage = styled.img`
