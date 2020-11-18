@@ -17,9 +17,14 @@ const ColorChooser = styled.div`
 
 const NumColors = styled.h5`
   display: block;
-  margin-bottom: 1em;
-  width 100%;
-  padding: 0 20px;
+  width: 100px;
+  min-width: 100px;
+  max-width: 200px;
+  margin-left: 44px;
+  margin-bottom: 12px;
+  margin-right: 12px;
+  padding: 0;
+  text-align: right;
   font-size: 14px;
   text-transform: none;
   letter-spacing: 0;
