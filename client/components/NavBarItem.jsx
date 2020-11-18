@@ -1,5 +1,35 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
+
+const Thumbnail = styled.button`
+  width: 24px;
+  height: 24px;
+  margin: 5px;
+  border-bottom: 1px solid #000;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0;
+  box-shadow: none;
+  outline: none;
+  touch-action: manipulation;
+  box-sizing: border-box;
+  visibility: visible;
+`;
+
+const ThumbnailImage = styled.img`
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #000;
+  transition: transform .2s ease;
+  transform: translateY(100%);
+  box-sizing: border-box;
+  visibility: visible;
+  pointer-events: all;
+`;
 
 const NavBarItem = function NavBarItem({ image, index, method }) {
   const changeIndex = function changeIndex(newIndex) {
@@ -7,9 +37,9 @@ const NavBarItem = function NavBarItem({ image, index, method }) {
   };
 
   return (
-    <button onClick={() => changeIndex(index)}>
-      <img src={image}/>
-    </button>
+    <Thumbnail onClick={() => changeIndex(index)}>
+      <ThumbnailImage src={image}/>
+    </Thumbnail>
   );
 };
 
