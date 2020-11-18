@@ -101,7 +101,7 @@ const App = function App({ data }) {
         </GallerySection>
       </TrackPinch>
       <FixedWidth>
-        <ColorPicker variants={data.variants} method={changeVariant}/>
+        <ColorPicker variants={data.variants} method={changeVariant} currentVariant={variant}/>
       </FixedWidth>
     </Content>
   );

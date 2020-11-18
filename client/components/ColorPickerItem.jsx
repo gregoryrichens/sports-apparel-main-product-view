@@ -27,13 +27,45 @@ const ColorPic = styled.img`
   width: 100%;
 `;
 
-const ColorPickerItem = function ColorPickerItem({ image, index, method }) {
+const Selected = styled.div`
+  dispaly: flex;
+  position: absolute;
+  right: -6px;
+  top: -6px;
+  width: 24px;
+  height 24px;
+  border-radius: 50%;
+  background-color: #000;
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+`;
+
+const Check = styled.svg`
+  display: inline-block;
+  height: 24px;
+  vertical-align: text-top;
+  width: 24px;
+`;
+
+const ColorPickerItem = function ColorPickerItem({
+  currentVariant, image, index, method,
+}) {
   const changeVariant = function changeVariant(newVariant) {
     method(newVariant);
   };
 
   return (
     <Color onClick={() => changeVariant(index)}>
+      { index === currentVariant
+        && <Selected>
+            <Check id="checkbox-checkmark" viewBox="0 0 16 24">
+              <title>checkbox-checkmark</title>
+              <path fill="none" stroke="currentColor" strokeMiterlimit="10" strokeWidth="2" d="M1 13l4 4L15 7"></path>
+            </Check>
+          </Selected>
+      }
       <ColorPic src={image}/>
     </Color>
   );
@@ -44,6 +76,7 @@ ColorPickerItem.propTypes = {
   key: PropTypes.number,
   index: PropTypes.number,
   method: PropTypes.func,
+  currentVariant: PropTypes.number,
 };
 
 export default ColorPickerItem;

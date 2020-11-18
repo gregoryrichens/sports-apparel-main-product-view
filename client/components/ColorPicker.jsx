@@ -73,7 +73,7 @@ const Slider = styled.div`
   transition: transform .4s ease;
 `;
 
-const ColorPicker = function ColorPicker({ variants, method }) {
+const ColorPicker = function ColorPicker({ currentVariant, variants, method }) {
   const changeVariant = function changeVariant(newVariant) {
     method(newVariant);
   };
@@ -88,7 +88,10 @@ const ColorPicker = function ColorPicker({ variants, method }) {
       <Right></Right>
       <Slider>
         {variants.map((variant, index) => <ColorPickerItem
-          image={variant.images[0]} key={index} index ={index} method={changeVariant}/>)}
+          image={variant.images[0]}
+          key={index} index ={index}
+          method={changeVariant}
+          currentVariant={currentVariant}/>)}
       </Slider>
     </Variations>
   </ColorChooser>
@@ -98,6 +101,7 @@ const ColorPicker = function ColorPicker({ variants, method }) {
 ColorPicker.propTypes = {
   variants: PropTypes.array,
   method: PropTypes.func,
+  currentVariant: PropTypes.number,
 };
 
 export default ColorPicker;
