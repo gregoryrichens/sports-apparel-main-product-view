@@ -53,6 +53,12 @@ const Expander = styled.div`
     justify-content: center;
   `;
 
+const FixedWidth = styled.div`
+  width: 100%;
+  backface-visibility: hidden;
+  position: relative;
+`;
+
 const App = function App({ data }) {
   const [currIndex, setCurrIndex] = useState(0);
   const [variant, setVariant] = useState(0);
@@ -94,9 +100,9 @@ const App = function App({ data }) {
           </TargetGallery>
         </GallerySection>
       </TrackPinch>
-      <div>
+      <FixedWidth>
         <ColorPicker variants={data.variants} method={changeVariant}/>
-      </div>
+      </FixedWidth>
     </Content>
   );
 };
