@@ -39,31 +39,31 @@ const Variations = styled.div`
   position: relative;
 `;
 
-const Left = styled.div`
-  background: linear-gradient(90deg,#fff,hsla(0,0%,100%,0));
-  left: 0;
-  opacity: 0;
-  position: absolute;
-  pointer-events: none;
-  height: calc(100% + 10px);
-  width: 60px;
-  z-index: 1;
-  top: -10px;
-  transition: opacity .3s ease;
-`;
+// const Left = styled.div`
+//   background: linear-gradient(90deg,#fff,hsla(0,0%,100%,0));
+//   left: 0;
+//   opacity: 0;
+//   position: absolute;
+//   pointer-events: none;
+//   height: calc(100% + 10px);
+//   width: 60px;
+//   z-index: 1;
+//   top: -10px;
+//   transition: opacity .3s ease;
+// `;
 
-const Right = styled.div`
-  background: linear-gradient(90deg,hsla(0,0%,100%,0),#fff);
-  right: 0;
-  opacity: 0;
-  position: absolute;
-  pointer-events: none;
-  height: calc(100% + 10px);
-  width: 60px;
-  z-index: 1;
-  top: -10px;
-  transition: opacity .3s ease;
-`;
+// const Right = styled.div`
+//   background: linear-gradient(90deg,hsla(0,0%,100%,0),#fff);
+//   right: 0;
+//   opacity: 0;
+//   position: absolute;
+//   pointer-events: none;
+//   height: calc(100% + 10px);
+//   width: 60px;
+//   z-index: 1;
+//   top: -10px;
+//   transition: opacity .3s ease;
+// `;
 
 const Slider = styled.div`
   display: inline-flex;
@@ -84,8 +84,8 @@ const ColorPicker = function ColorPicker({ currentVariant, variants, method }) {
       {variants.length === 1 ? '1 Color' : `${variants.length} Colors`} Available
     </NumColors>
     <Variations>
-      <Left></Left>
-      <Right></Right>
+      {/* <Left></Left>
+      <Right></Right> */}
       <Slider>
         {variants.map((variant, index) => <ColorPickerItem
           image={variant.images[0]}
