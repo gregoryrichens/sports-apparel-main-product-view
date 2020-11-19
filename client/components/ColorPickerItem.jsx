@@ -20,11 +20,21 @@ const Color = styled.a`
   outline: none;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   touch-action: manipulation;
+  &::after {
+    content: "";
+    width: 100%;
+    position: absolute;
+    background: #000;
+    bottom: 0;
+    left: 0;
+    height: ${({ index, currentVariant }) => ((currentVariant === index) && '3px')};
+  }
 `;
 
 const ColorPic = styled.img`
   height: 100%;
   width: 100%;
+  }
 `;
 
 const Selected = styled.div`
@@ -57,7 +67,7 @@ const ColorPickerItem = function ColorPickerItem({
   };
 
   return (
-    <Color onClick={() => changeVariant(index)}>
+    <Color index={index} currentVariant={currentVariant} className='color' onClick={() => changeVariant(index)}>
       { index === currentVariant
         && <Selected>
             <Check id="checkbox-checkmark" viewBox="0 0 16 24">
@@ -66,7 +76,7 @@ const ColorPickerItem = function ColorPickerItem({
             </Check>
           </Selected>
       }
-      <ColorPic src={image}/>
+      <ColorPic src={image} className={ index === currentVariant ? 'selected' : 'normal' }/>
     </Color>
   );
 };
@@ -78,5 +88,15 @@ ColorPickerItem.propTypes = {
   method: PropTypes.func,
   currentVariant: PropTypes.number,
 };
+
+// &:after {
+//   content: "";
+//   width: 100%;
+//   position: absolute;
+//   background: #000;
+//   bottom: 0;
+//   left: 0;
+//   height: 3px;
+// }
 
 export default ColorPickerItem;
