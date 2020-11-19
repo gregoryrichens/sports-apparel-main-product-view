@@ -53,6 +53,12 @@ const Expander = styled.div`
     justify-content: center;
   `;
 
+const FixedWidth = styled.div`
+  width: 100%;
+  backface-visibility: hidden;
+  position: relative;
+`;
+
 const App = function App({ data }) {
   const [currIndex, setCurrIndex] = useState(0);
   const [variant, setVariant] = useState(0);
@@ -69,7 +75,6 @@ const App = function App({ data }) {
     <Content>
       <TrackPinch>
         <GallerySection>
-          <p>you have no chance to survive make your time ha ha ha</p>
           <TargetGallery>
             <ImageViewer>
               <Expander className="Expander">
@@ -86,7 +91,7 @@ const App = function App({ data }) {
                 />
                 <NavBar
                   variant={data.variants[variant]}
-                  index={currIndex}
+                  currIndex={currIndex}
                   method={changeIndex}
                 />
               </Expander>
@@ -94,9 +99,9 @@ const App = function App({ data }) {
           </TargetGallery>
         </GallerySection>
       </TrackPinch>
-      <div>
-        <ColorPicker variants={data.variants} method={changeVariant}/>
-      </div>
+      <FixedWidth>
+        <ColorPicker variants={data.variants} method={changeVariant} currentVariant={variant}/>
+      </FixedWidth>
     </Content>
   );
 };

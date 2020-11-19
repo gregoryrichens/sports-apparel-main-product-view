@@ -12,7 +12,7 @@ const Pagination = styled.div`
   transition: opacity .4s ease;
 `;
 
-const NavBar = function NavBar({ variant, method }) {
+const NavBar = function NavBar({ currIndex, variant, method }) {
   const changeIndex = function changeIndex(newIndex) {
     method(newIndex);
   };
@@ -23,6 +23,7 @@ const NavBar = function NavBar({ variant, method }) {
         image={image}
         key={index}
         index={index}
+        currIndex={currIndex}
         method={changeIndex}/>)}
     </Pagination>
   );
@@ -31,6 +32,7 @@ const NavBar = function NavBar({ variant, method }) {
 NavBar.propTypes = {
   variant: PropTypes.object,
   method: PropTypes.func,
+  currIndex: PropTypes.number,
 };
 
 export default NavBar;

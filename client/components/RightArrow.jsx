@@ -24,6 +24,7 @@ const RightScroll = styled.button`
   opacity: 1;
   transition: opacity .4s ease;
   user-select: none;
+  cursor: pointer;
 `;
 
 const RightArrow = function RightArrow({ method, index, length }) {
