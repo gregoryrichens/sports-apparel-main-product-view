@@ -6,6 +6,7 @@ import ColorPicker from './ColorPicker.jsx';
 import LeftArrow from './LeftArrow.jsx';
 import RightArrow from './RightArrow.jsx';
 import NavBar from './NavBar.jsx';
+import Breadcrumbs from './Breadcrumbs.jsx';
 
 const Content = styled.div`
     width: 100%;
@@ -75,6 +76,7 @@ const App = function App({ data }) {
     <Content>
       <TrackPinch>
         <GallerySection>
+          <Breadcrumbs/>
           <TargetGallery>
             <ImageViewer>
               <Expander className="Expander">
