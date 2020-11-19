@@ -8,6 +8,7 @@ module.exports = function createServer() {
   app.get('/test', controllers.testGet);
   app.get('/allProducts', controllers.allProducts);
   app.get('/oneProduct', controllers.oneProduct);
+  app.get('/oneProductControl', controllers.oneProductControl);
   app.foo = app.listen(PORT, () => {
     // eslint-disable-next-line no-console
     console.log(`connected at http://localhost:${PORT}`);

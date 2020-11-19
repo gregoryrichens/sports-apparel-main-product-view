@@ -24,6 +24,17 @@ const oneProduct = (req, res) => {
   });
 };
 
+const oneProductControl = (req, res) => {
+  Product.findOneControl((err, results) => {
+    if (err) {
+      res.sendStatus(404);
+    } else {
+      res.json(results);
+    }
+  });
+};
+
 module.exports.testGet = testGet;
 module.exports.allProducts = allProducts;
 module.exports.oneProduct = oneProduct;
+module.exports.oneProductControl = oneProductControl;

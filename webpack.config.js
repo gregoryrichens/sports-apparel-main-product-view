@@ -18,7 +18,7 @@ module.exports = {
         include: APP_DIR,
         loader: 'babel-loader',
         options: {
-          presets: ['@babel/react', '@babel/preset-env'],
+          presets: ['@babel/react', '@babel/preset-env', '@babel/preset-react'],
           plugins: ['babel-plugin-styled-components'],
         },
       },

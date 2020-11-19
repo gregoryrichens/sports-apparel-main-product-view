@@ -19,6 +19,12 @@ const findOne = function findOne(callback) {
   }, callback);
 };
 
+const findOneControl = function findOneControl(callback) {
+  Product.find({
+    productID: 21,
+  }, callback);
+};
+
 const insertProduct = async function insertProduct(product) {
   await Product.create(product)
     .then(console.log('product inserted'))
@@ -29,3 +35,4 @@ module.exports.findAll = findAll;
 module.exports.findOne = findOne;
 module.exports.insertProduct = insertProduct;
 module.exports.Product = Product;
+module.exports.findOneControl = findOneControl;

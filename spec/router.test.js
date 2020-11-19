@@ -21,20 +21,20 @@ describe('routing test suite', () => {
   const app = createServer();
 
   // eslint-disable-next-line jest/consistent-test-it
-  test('get /findOne should return one product with certain qualities', async () => {
-    const product = await model.insertProduct({
+  test('get /oneProductControl should return one product with certain qualities', async () => {
+    await model.insertProduct({
       productID: dummyData.productID,
       variants: dummyData.variants,
     });
 
     await supertest(app)
-      .get('/oneProduct')
+      .get('/oneProductControl')
       .expect(200)
       .then((response) => {
         expect(Array.isArray(response.body)).toBeTruthy();
         expect(response.body).toHaveLength(1);
-        expect(response.body[0].productID).toEqual(dummyData.productID);
-        expect(response.body[0].variants[0]).toEqual(dummyData.variants[0]);
+        expect(response.body[0].productID).toStrictEqual(dummyData.productID);
+        expect(response.body[0].variants[0]).toStrictEqual(dummyData.variants[0]);
       });
   });
 
