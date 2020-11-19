@@ -12,7 +12,9 @@
     "start": "nodemon server/server.js",
     "transpile-dev": "webpack",
     "transpile": "NODE_ENV='production' webpack",
-    "test": "jest"
+    "test-be": "./node_modules/.bin/jest --config ./jest.be.config.js --watch",
+    "test-fe": "./node_modules/.bin/jest --config ./jest.fe.config.js --watch",
+    "test": "./node_modules/.bin/jest --config ./jest.all.config.js --detectOpenHandles --watch"
   },
   "resolutions": {
     "styled-components": "^5"
@@ -32,6 +34,7 @@
     "@babel/core": "^7.12.3",
     "@babel/preset-env": "^7.12.1",
     "@babel/preset-react": "^7.12.5",
+    "@shelf/jest-mongodb": "^1.2.3",
     "babel-jest": "^26.6.3",
     "babel-loader": "^8.2.1",
     "babel-plugin-styled-components": "^1.11.1",

@@ -1,33 +1,39 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import MyComponent from './MyComponent';
-import Foo from './Foo';
+import dummyData from '../dummyData';
+import App from '../client/components/App.jsx';
+import MainView from '../client/components/MainView.jsx';
+import LeftArrow from '../client/components/LeftArrow.jsx';
+import RightArrow from '../client/components/RightArrow.jsx';
+import NavBar from '../client/components/NavBar.jsx';
 
-describe('<MyComponent />', () => {
-  it('renders three <Foo /> components', () => {
-    const wrapper = shallow(<MyComponent />);
-    expect(wrapper.find(Foo)).to.have.lengthOf(3);
+describe('<App />', () => {
+  it('renders one <MainView /> component', () => {
+    const wrapper = shallow(<App data={dummyData}/>);
+    expect(wrapper.find(MainView)).toHaveLength(1);
   });
 
-  it('renders an `.icon-star`', () => {
-    const wrapper = shallow(<MyComponent />);
-    expect(wrapper.find('.icon-star')).to.have.lengthOf(1);
+  it('renders one <LeftArrow /> component', () => {
+    const wrapper = shallow(<App data={dummyData}/>);
+    expect(wrapper.find(LeftArrow)).toHaveLength(1);
   });
 
-  it('renders children when passed in', () => {
-    const wrapper = shallow((
-      <MyComponent>
-        <div className="unique" />
-      </MyComponent>
-    ));
-    expect(wrapper.contains(<div className="unique" />)).to.equal(true);
+  it('renders one <RightArrow /> component', () => {
+    const wrapper = shallow(<App data={dummyData}/>);
+    expect(wrapper.find(RightArrow)).toHaveLength(1);
   });
 
-  it('simulates click events', () => {
-    const onButtonClick = sinon.spy();
-    const wrapper = shallow(<Foo onButtonClick={onButtonClick} />);
-    wrapper.find('button').simulate('click');
-    expect(onButtonClick).to.have.property('callCount', 1);
+  it('renders one <NavBar /> component', () => {
+    const wrapper = shallow(<App data={dummyData}/>);
+    expect(wrapper.find(NavBar)).toHaveLength(1);
   });
+
+  // eslint-disable-next-line jest/no-commented-out-tests
+  // it('simulates click events', () => {
+  //   const onButtonClick = sinon.spy();
+  //   const wrapper = shallow(<Foo onButtonClick={onButtonClick} />);
+  //   wrapper.find('button').simulate('click');
+  //   expect(onButtonClick).to.have.property('callCount', 1);
+  // });
 });
