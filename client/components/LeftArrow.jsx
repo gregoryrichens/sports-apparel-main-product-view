@@ -24,6 +24,7 @@ const LeftScroll = styled.button`
   opacity: 1;
   transition: opacity .4s ease;
   user-select: none;
+  cursor: pointer;
 `;
 
 const LeftArrow = function LeftArrow({ method, index, length }) {

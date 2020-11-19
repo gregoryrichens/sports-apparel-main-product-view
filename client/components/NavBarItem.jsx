@@ -4,12 +4,12 @@ import styled from 'styled-components';
 
 const Thumbnail = styled.button`
   width: 24px;
-  height: 24px;
+  height: ${({ index, currIndex }) => ((currIndex === index) ? '26px' : '24px')};
   margin: 5px;
   border-left: none;
   border-top: none;
   border-right: none;
-  border-bottom: 1px solid #000;
+  border-bottom: ${({ index, currIndex }) => ((currIndex === index) ? '3px solid #000' : '1px solid #000')};
   position: relative;
   overflow: hidden;
   border-radius: 0;
@@ -19,6 +19,7 @@ const Thumbnail = styled.button`
   box-sizing: border-box;
   visibility: visible;
   background: none;
+  cursor: pointer;
 `;
 
 const ThumbnailImage = styled.img`
@@ -38,13 +39,15 @@ const ThumbnailImage = styled.img`
   }
 `;
 
-const NavBarItem = function NavBarItem({ image, index, method }) {
+const NavBarItem = function NavBarItem({
+  currIndex, image, index, method,
+}) {
   const changeIndex = function changeIndex(newIndex) {
     method(newIndex);
   };
 
   return (
-    <Thumbnail onClick={() => changeIndex(index)}>
+    <Thumbnail currIndex={currIndex} index={index} onClick={() => changeIndex(index)}>
       <ThumbnailImage src={image}/>
     </Thumbnail>
   );
@@ -53,6 +56,7 @@ const NavBarItem = function NavBarItem({ image, index, method }) {
 NavBarItem.propTypes = {
   image: PropTypes.string,
   index: PropTypes.number,
+  currIndex: PropTypes.number,
   method: PropTypes.func,
 };
 

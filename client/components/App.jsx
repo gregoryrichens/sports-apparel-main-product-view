@@ -75,7 +75,6 @@ const App = function App({ data }) {
     <Content>
       <TrackPinch>
         <GallerySection>
-          <p>you have no chance to survive make your time ha ha ha</p>
           <TargetGallery>
             <ImageViewer>
               <Expander className="Expander">
@@ -92,7 +91,7 @@ const App = function App({ data }) {
                 />
                 <NavBar
                   variant={data.variants[variant]}
-                  index={currIndex}
+                  currIndex={currIndex}
                   method={changeIndex}
                 />
               </Expander>

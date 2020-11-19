@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Color = styled.a`
-  margin-left: 20px;
+  margin-left: ${({ index }) => ((index === 0) && '20px')};
   height: 60px;
   width: 60px;
   margin-right: 10px;
@@ -83,7 +83,6 @@ const ColorPickerItem = function ColorPickerItem({
 
 ColorPickerItem.propTypes = {
   image: PropTypes.string,
-  key: PropTypes.number,
   index: PropTypes.number,
   method: PropTypes.func,
   currentVariant: PropTypes.number,
