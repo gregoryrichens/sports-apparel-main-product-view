@@ -7,6 +7,7 @@ import LeftArrow from './LeftArrow.jsx';
 import RightArrow from './RightArrow.jsx';
 import NavBar from './NavBar.jsx';
 import Breadcrumbs from './Breadcrumbs.jsx';
+import Badge from './Badge.jsx';
 
 const Content = styled.div`
     width: 100%;
@@ -96,6 +97,7 @@ const App = function App({ data }) {
                   currIndex={currIndex}
                   method={changeIndex}
                 />
+                <Badge />
               </Expander>
             </ImageViewer>
           </TargetGallery>
