@@ -28,7 +28,7 @@ const NumColors = styled.h5`
   font-size: 14px;
   text-transform: none;
   letter-spacing: 0;
-  font-family: AdihausDIN,Helvetica,Arial,sans-serif;
+  font-family: AdiHaus,Helvetica,Arial,sans-serif;
   font-weight: 700;
   line-height: 15px;
 `;
