@@ -20,7 +20,7 @@ const View = styled.div`
   overflow: hidden;
   height: 100%;
   min-width: 100%;
-  background-color: #edeff0;
+  background-color: #eceeef;
   visibility: visible;
   position: relative;
   text-align: center;

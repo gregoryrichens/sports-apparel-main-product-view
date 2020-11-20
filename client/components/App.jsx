@@ -50,7 +50,7 @@ const Expander = styled.div`
     position: absolute;
     left: 0;
     top: 0;
-    background-color: #edeff0;
+    background-color: #eceeef;
     display: flex;
     justify-content: center;
     overflow: hidden;

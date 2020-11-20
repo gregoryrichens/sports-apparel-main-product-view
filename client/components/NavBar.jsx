@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import NavBarItem from './NavBarItem.jsx';
 
 const Pagination = styled.div`
+  display: flex;
+  align-items: baseline;
   visibility: visible;
   bottom: 40px;
   pointer-events: all;

@@ -11,15 +11,14 @@ const Thumbnail = styled.button`
   border-right: none;
   border-bottom: ${({ index, currIndex }) => ((currIndex === index) ? '3px solid #000' : '1px solid #000')};
   position: relative;
-  overflow: hidden;
   border-radius: 0;
   box-shadow: none;
   outline: none;
   touch-action: manipulation;
-  box-sizing: border-box;
   visibility: visible;
   background: none;
   cursor: pointer;
+  overflow: hidden;
 `;
 
 const ThumbnailImage = styled.img`
