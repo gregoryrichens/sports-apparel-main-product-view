@@ -14,6 +14,8 @@ const Views = styled.div`
     visibility: visible;
   `;
 
+// this is the image wrapper and needs the transition on it
+// transition -100 * index %
 const View = styled.div`
   overflow: hidden;
   height: 100%;
@@ -22,6 +24,8 @@ const View = styled.div`
   visibility: visible;
   position: relative;
   text-align: center;
+  transform: translateX(-${({ currIndex }) => (currIndex * 100)}%);
+  transition: transform 1s;
 `;
 
 const MainImage = styled.img`
@@ -36,20 +40,24 @@ const MainImage = styled.img`
   margin: 0 auto;
 `;
 
-const MainView = function MainView(props) {
+// render all images
+const MainView = function MainView({ images, currIndex }) {
   return (
   <Views>
-    <View>
-      <MainImage
-        src={props.image}
-      />
-    </View>
+    {images.map((image, i) => (
+      <View key={i} currIndex={currIndex} index={i}>
+        <MainImage
+          src={image}
+        />
+      </View>
+    ))}
   </Views>
   );
 };
 
 MainView.propTypes = {
-  image: PropTypes.string,
+  images: PropTypes.array,
+  currIndex: PropTypes.number,
 };
 
 export default MainView;

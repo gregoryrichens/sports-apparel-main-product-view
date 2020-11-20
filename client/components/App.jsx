@@ -53,6 +53,7 @@ const Expander = styled.div`
     background-color: #edeff0;
     display: flex;
     justify-content: center;
+    overflow: hidden;
   `;
 
 const FixedWidth = styled.div`
@@ -81,7 +82,7 @@ const App = function App({ data }) {
           <TargetGallery>
             <ImageViewer>
               <Expander className="Expander">
-                <MainView image={data.variants[variant].images[currIndex]}/>
+                <MainView images={data.variants[variant].images} currIndex={currIndex}/>
                 <LeftArrow
                   method={changeIndex}
                   index={currIndex}
