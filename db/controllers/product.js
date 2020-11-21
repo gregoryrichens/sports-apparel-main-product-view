@@ -15,7 +15,7 @@ const allProducts = (req, res) => {
 };
 
 const oneProduct = (req, res) => {
-  Product.findOne((err, results) => {
+  Product.findOne(req.params.id, (err, results) => {
     if (err) {
       res.sendStatus(404);
     } else {
@@ -24,17 +24,17 @@ const oneProduct = (req, res) => {
   });
 };
 
-const oneProductControl = (req, res) => {
-  Product.findOneControl((err, results) => {
-    if (err) {
-      res.sendStatus(404);
-    } else {
-      res.json(results);
-    }
-  });
-};
+// const oneProductControl = (req, res) => {
+//   Product.findOneControl((err, results) => {
+//     if (err) {
+//       res.sendStatus(404);
+//     } else {
+//       res.json(results);
+//     }
+//   });
+// };
 
 module.exports.testGet = testGet;
 module.exports.allProducts = allProducts;
 module.exports.oneProduct = oneProduct;
-module.exports.oneProductControl = oneProductControl;
+// module.exports.oneProductControl = oneProductControl;

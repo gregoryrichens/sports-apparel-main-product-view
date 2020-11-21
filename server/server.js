@@ -24,10 +24,10 @@ app.get('/test', controllers.testGet);
 app.get('/allProducts', controllers.allProducts);
 
 // app.get for one product
-app.get('/oneProduct', controllers.oneProduct);
+app.get('/product/:id', controllers.oneProduct);
 
-// app.get for test environment duplicates above with productID: 21
-app.get('/oneProductControl', controllers.oneProductControl);
+// // app.get for test environment duplicates above with productID: 21
+// app.get('/oneProductControl', controllers.oneProductControl);
 
 app.listen(PORT, () => {
   // eslint-disable-next-line no-console
