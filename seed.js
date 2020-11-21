@@ -63,7 +63,8 @@ const seedDB = async function seedDB(numRecords) { // make this async
   // while the count is less than num records keep going
   while (count <= numRecords) {
     const dbProduct = createProduct(count);
-    db.insertProduct(dbProduct);
+    // eslint-disable-next-line no-await-in-loop
+    await db.insertProduct(dbProduct);
     console.log('product inserted');
     count += 1;
   }
