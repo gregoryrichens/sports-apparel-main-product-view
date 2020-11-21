@@ -44,7 +44,7 @@ const ImageViewer = styled.section`
 const Expander = styled.div`
     height: calc(100vh - 300px);
     min-height: 600px;
-    max-heigth: 2000px;
+    max-height: 2000px;
     width: 100%;
     overflow-x: inherit;
     position: absolute;
@@ -65,6 +65,7 @@ const FixedWidth = styled.div`
 const App = function App({ data }) {
   const [currIndex, setCurrIndex] = useState(0);
   const [variant, setVariant] = useState(0);
+  const [zoom, setZoom] = useState(false);
 
   const changeIndex = function changeIndex(newIndex) {
     setCurrIndex(newIndex);
@@ -82,21 +83,29 @@ const App = function App({ data }) {
           <TargetGallery>
             <ImageViewer>
               <Expander className="Expander">
-                <MainView images={data.variants[variant].images} currIndex={currIndex}/>
+                <MainView
+                  images={data.variants[variant].images}
+                  currIndex={currIndex}
+                  zoom={zoom}
+                  setZoom={setZoom}
+                />
                 <LeftArrow
                   method={changeIndex}
                   index={currIndex}
                   length={data.variants[variant].images.length}
+                  zoom={zoom}
                 />
                 <RightArrow
                   method={changeIndex}
                   index={currIndex}
                   length={data.variants[variant].images.length}
+                  zoom={zoom}
                 />
                 <NavBar
                   variant={data.variants[variant]}
                   currIndex={currIndex}
                   method={changeIndex}
+                  zoom={zoom}
                 />
                 <Badge />
               </Expander>
