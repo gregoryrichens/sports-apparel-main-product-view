@@ -63,7 +63,7 @@ const MainView = function MainView({
   };
 
   return (
-  <Views inCursor={'/cursor-zoom.png'} outCursor={'/cursor-zoomed.png'} zoom={zoom} onClick={() => toggleZoom()}>
+  <Views inCursor={'https://www.adidas.com/glass/react/2f4232c/assets/img/icon-adidas-cursor-zoom.png'} outCursor={'https://www.adidas.com/glass/react/2f4232c/assets/img/icon-adidas-cursor-zoomed.png'} zoom={zoom} onClick={() => toggleZoom()}>
     {images.map((image, i) => (
       <View zoom={zoom} key={i} currIndex={currIndex} index={i}>
         <MainImage

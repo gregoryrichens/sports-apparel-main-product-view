@@ -11,19 +11,24 @@ const findAll = function findAll(callback) {
   Product.find({}, callback);
 };
 
-const findOne = function findOne(callback) {
+const findRandom = function findRandom(callback) {
   const id = Math.ceil(Math.random() * 100);
   Product.find({
-    // productID: 21
     productID: id,
   }, callback);
 };
 
-const findOneControl = function findOneControl(callback) {
+const findOne = function findOne(id, callback) {
   Product.find({
-    productID: 21,
+    productID: id,
   }, callback);
 };
+
+// const findOneControl = function findOneControl(callback) {
+//   Product.find({
+//     productID: 21,
+//   }, callback);
+// };
 
 const insertProduct = async function insertProduct(product) {
   await Product.create(product)
@@ -35,4 +40,5 @@ module.exports.findAll = findAll;
 module.exports.findOne = findOne;
 module.exports.insertProduct = insertProduct;
 module.exports.Product = Product;
-module.exports.findOneControl = findOneControl;
+// module.exports.findOneControl = findOneControl;
+module.exports.findRandom = findRandom;

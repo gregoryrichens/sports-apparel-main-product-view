@@ -21,14 +21,14 @@ describe('routing test suite', () => {
   const app = createServer();
 
   // eslint-disable-next-line jest/consistent-test-it
-  test('get /oneProductControl should return one product with certain qualities', async () => {
+  test('get /product/:id should return one product with certain qualities', async () => {
     await model.insertProduct({
       productID: dummyData.productID,
       variants: dummyData.variants,
     });
 
     await supertest(app)
-      .get('/oneProductControl')
+      .get('/product/21')
       .expect(200)
       .then((response) => {
         expect(Array.isArray(response.body)).toBeTruthy();
