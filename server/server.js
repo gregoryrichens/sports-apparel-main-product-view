@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const controllers = require('../db/controllers/product.js');
 
 const app = express();
-const PORT = 3002;
+const PORT = 3001;
 
 mongoose.connect('mongodb://localhost/sadida')
   .then(() => {
@@ -24,7 +24,7 @@ app.get('/test', controllers.testGet);
 app.get('/allProducts', controllers.allProducts);
 
 // app.get for one product
-app.get('/product/:id', controllers.oneProduct);
+app.get('/api/products/:id/trackpinch', controllers.oneProduct);
 
 // // app.get for test environment duplicates above with productID: 21
 // app.get('/oneProductControl', controllers.oneProductControl);

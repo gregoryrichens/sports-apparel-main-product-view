@@ -17,8 +17,10 @@ const allProducts = (req, res) => {
 const oneProduct = (req, res) => {
   Product.findOne(req.params.id, (err, results) => {
     if (err) {
+      console.log(err);
       res.sendStatus(404);
     } else {
+      console.log('hi');
       res.json(results);
     }
   });

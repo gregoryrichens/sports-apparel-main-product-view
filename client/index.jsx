@@ -5,9 +5,9 @@ import App from './components/App.jsx';
 
 // const dummyData = require('../dummyData.js');
 
-axios.get('/product/21')
+axios.get('/api/products/21/trackpinch')
   .then((response) => {
-    ReactDOM.render(<App data={response.data[0]}/>, document.getElementById('app'));
+    ReactDOM.render(<App data={response.data[0]}/>, document.getElementById('TrackPinch'));
   })
   .catch((error) => console.log(error));
 

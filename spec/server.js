@@ -7,7 +7,7 @@ module.exports = function createServer() {
   app.use(express.json());
   app.get('/test', controllers.testGet);
   app.get('/allProducts', controllers.allProducts);
-  app.get('/product/:id', controllers.oneProduct);
+  app.get('api/products/:id/trackpinch', controllers.oneProduct);
   app.foo = app.listen(PORT, () => {
     // eslint-disable-next-line no-console
     console.log(`connected at http://localhost:${PORT}`);
