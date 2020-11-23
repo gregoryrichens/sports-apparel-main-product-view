@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const db = require('./db/models/product.js');
 // import db saver - make db saver async
 
-mongoose.connect('mongodb://localhost/sadida');
+mongoose.connect('mongodb://database/sadida');
 
 const nmd = [
   {
