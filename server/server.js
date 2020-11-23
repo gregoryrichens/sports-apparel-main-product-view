@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const path = require('path');
 const controllers = require('../db/controllers/product.js');
 
 const app = express();
@@ -26,8 +27,15 @@ app.get('/allProducts', controllers.allProducts);
 // app.get for one product
 app.get('/api/products/:id/trackpinch', controllers.oneProduct);
 
-// // app.get for test environment duplicates above with productID: 21
-// app.get('/oneProductControl', controllers.oneProductControl);
+app.get('/:id', ((req, res) => {
+  res.sendFile(path.join(__dirname, '../public/index.html'), (err) => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log('index.html sent');
+    }
+  })
+}))
 
 app.listen(PORT, () => {
   // eslint-disable-next-line no-console
