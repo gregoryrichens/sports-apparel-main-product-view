@@ -5,7 +5,7 @@ const controllers = require('../db/controllers/product.js');
 const app = express();
 const PORT = 3001;
 
-mongoose.connect('mongodb://localhost/sadida')
+mongoose.connect('mongodb://database/sadida')
   .then(() => {
     // eslint-disable-next-line no-console
     console.log('db connected');
