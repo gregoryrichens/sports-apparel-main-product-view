@@ -8,6 +8,7 @@ describe('routing test suite', () => {
   beforeEach(async () => {
     await mongoose.connect('mongodb://localhost/jest', { useNewUrlParser: true })
       .then(() => {
+        console.log('router db connected');
       })
       .catch((err) => console.log(err));
   });
@@ -21,14 +22,14 @@ describe('routing test suite', () => {
   const app = createServer();
 
   // eslint-disable-next-line jest/consistent-test-it
-  test('get /products/:id/trackpinch should return one product with certain qualities', async () => {
+  test('get api/products/:id/trackpinch should return one product with certain qualities', async () => {
     await model.insertProduct({
       productID: dummyData.productID,
       variants: dummyData.variants,
     });
 
     await supertest(app)
-      .get('/product/21/trackpinch')
+      .get('/api/products/21/trackpinch')
       .expect(200)
       .then((response) => {
         expect(Array.isArray(response.body)).toBeTruthy();
