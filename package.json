@@ -14,7 +14,8 @@
     "transpile": "NODE_ENV='production' webpack",
     "test-be": "./node_modules/.bin/jest --config ./jest.be.config.js --watch",
     "test-fe": "./node_modules/.bin/jest --config ./jest.fe.config.js --watch",
-    "test": "./node_modules/.bin/jest --config ./jest.all.config.js --detectOpenHandles --watch"
+    "test": "./node_modules/.bin/jest --config ./jest.all.config.js --detectOpenHandles --watch",
+    "docker": "node seed.js && node server/server.js"
   },
   "resolutions": {
     "styled-components": "^5"
