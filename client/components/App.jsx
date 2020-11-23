@@ -35,7 +35,7 @@ const TargetGallery = styled.div`
 const ImageViewer = styled.section`
     height: calc(100vh - 300px);
     min-height: 600px;
-    max-heigth: 2000px;
+    max-height: 2000px;
     width: 100%;
     position: relative;
     user-select: none;
