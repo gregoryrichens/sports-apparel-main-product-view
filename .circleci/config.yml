@@ -46,11 +46,12 @@ jobs:
       - run:
           name: Deploy over SSH
           command: |
-            ssh -o StrictHostKeyChecking=no ec2-user@ec2-18-212-32-173.compute-1.amazonaws.com \
-            cd fec \
-            docker-compose pull \
-            docker-compose up -d \
-            ENDSSH
+            ssh -o StrictHostKeyChecking=no ec2-user@ec2-35-160-105-13.us-west-2.compute.amazonaws.com bash -c '\
+            pwd
+            cd FEC
+            pwd
+            docker-compose pull
+            docker-compose up -d'
 workflows:
   version: 2
   build-master:
