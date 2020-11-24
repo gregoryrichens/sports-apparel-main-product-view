@@ -34,8 +34,8 @@ app.get('/:id', ((req, res) => {
     } else {
       console.log('index.html sent');
     }
-  })
-}))
+  });
+}));
 
 app.listen(PORT, () => {
   // eslint-disable-next-line no-console
