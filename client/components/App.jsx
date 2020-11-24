@@ -8,6 +8,7 @@ import RightArrow from './RightArrow.jsx';
 import NavBar from './NavBar.jsx';
 import Breadcrumbs from './Breadcrumbs.jsx';
 import Badge from './Badge.jsx';
+import GlobalStyle from './GlobalStyles.jsx';
 
 const Content = styled.div`
     width: 100%;
@@ -77,6 +78,7 @@ const App = function App({ data }) {
 
   return (
     <Content>
+      <GlobalStyle/>
       <TrackPinch>
         <GallerySection>
           <Breadcrumbs/>
