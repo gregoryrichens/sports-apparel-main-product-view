@@ -39,5 +39,5 @@ app.get('/:id', ((req, res) => {
 
 app.listen(PORT, () => {
   // eslint-disable-next-line no-console
-  console.log(`Taking off every zig at http://localhost:${PORT}`);
+  console.log('Taking off every zig at http://18.212.32.173:3001/99');
 });
