@@ -14,9 +14,6 @@ const Views = styled.div`
     left: 0;
     top: 0;
     visibility: visible;
-    cursor: ${({ zoom, inCursor, outCursor }) => (zoom
-    ? `url(${outCursor})`
-    : `url(${inCursor})`)}, auto;
   `;
 
 // conditionally set overflow to scroll based on zoom
@@ -49,6 +46,9 @@ const MainImage = styled.img`
   && `transform: scale(2.5);
   transform-origin: top left;
   `}
+  cursor: ${({ zoom, inCursor, outCursor }) => (zoom
+    ? `url(${outCursor}), zoom-out`
+    : `url(${inCursor}), zoom-in`)} !important;
 `;
 
 // render all images
@@ -63,10 +63,12 @@ const MainView = function MainView({
   };
 
   return (
-  <Views inCursor={'https://www.adidas.com/glass/react/2f4232c/assets/img/icon-adidas-cursor-zoom.png'} outCursor={'https://www.adidas.com/glass/react/2f4232c/assets/img/icon-adidas-cursor-zoomed.png'} zoom={zoom} onClick={() => toggleZoom()}>
+  <Views zoom={zoom} onClick={() => toggleZoom()}>
     {images.map((image, i) => (
       <View zoom={zoom} key={i} currIndex={currIndex} index={i}>
         <MainImage
+          inCursor={'https://www.adidas.com/glass/react/2f4232c/assets/img/icon-adidas-cursor-zoom.png'}
+          outCursor={'https://www.adidas.com/glass/react/2f4232c/assets/img/icon-adidas-cursor-zoomed.png'}
           src={image}
           zoom={zoom}
         />
