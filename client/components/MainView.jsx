@@ -18,7 +18,7 @@ const Views = styled.div`
 
 // conditionally set overflow to scroll based on zoom
 const View = styled.div`
-  overflow: ${({ zoom }) => (zoom ? 'scroll' : 'hidden')};
+  overflow: hidden;
   height: 100%;
   min-width: 100%;
   background-color: #eceeef;
@@ -42,13 +42,7 @@ const MainImage = styled.img`
   top: 0;
   bottom: 0;
   margin: 0 auto;
-  ${({ zoom }) => zoom
-  && `transform: scale(2.5);
-  transform-origin: top left;
-  `}
-  cursor: ${({ zoom, inCursor, outCursor }) => (zoom
-    ? `url(${outCursor}), zoom-out`
-    : `url(${inCursor}), zoom-in`)} !important;
+  cursor: ${({ inCursor }) => (`url(${inCursor}), zoom-in`)} !important;
 `;
 
 // render all images
@@ -63,7 +57,7 @@ const MainView = function MainView({
   };
 
   return (
-  <Views zoom={zoom} onClick={() => toggleZoom()}>
+  <Views onClick={() => toggleZoom()}>
     {images.map((image, i) => (
       <View zoom={zoom} key={i} currIndex={currIndex} index={i}>
         <MainImage
