@@ -8,6 +8,7 @@ import RightArrow from './RightArrow.jsx';
 import NavBar from './NavBar.jsx';
 import Breadcrumbs from './Breadcrumbs.jsx';
 import Badge from './Badge.jsx';
+import Zoom from './Zoom.jsx';
 import GlobalStyle from './GlobalStyles.jsx';
 
 const Content = styled.div`
@@ -114,6 +115,12 @@ const App = function App({ data }) {
             </ImageViewer>
           </TargetGallery>
         </GallerySection>
+        <Zoom
+          images={data.variants[variant].images}
+          currIndex={currIndex}
+          zoom={zoom}
+          setZoom={setZoom}
+        />
       </TrackPinch>
       <FixedWidth>
         <ColorPicker variants={data.variants} method={changeVariant} currentVariant={variant}/>
