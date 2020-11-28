@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
+const compression = require('compression');
 const controllers = require('../db/controllers/product.js');
 
 const app = express();
@@ -16,6 +17,7 @@ mongoose.connect('mongodb://database/sadida')
     console.error('connection error');
   });
 
+app.use(compression());
 app.use(express.static('public'));
 app.use(express.json());
 

@@ -21,6 +21,7 @@ const oneProduct = (req, res) => {
       res.sendStatus(404);
     } else {
       console.log('hi');
+      res.set('Cache-Control', 'public, max-age=31557600');
       res.json(results);
     }
   });
