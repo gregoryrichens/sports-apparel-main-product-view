@@ -20,7 +20,7 @@ const BackButtonListItem = styled.li`
   margin-right: 20px;
   height: 13px;
   text-transform: uppercase;
-  font-family: AdiHaus,Helvetica,Arial,sans-serif;
+  font-family: 'AdihausDIN',Helvetica,Arial,sans-serif;
   font-weight: 700;
   letter-spacing: 2px;
   font-size: 11px;
