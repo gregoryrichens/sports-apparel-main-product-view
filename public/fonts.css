@@ -1,0 +1,19 @@
+@font-face {
+  font-family: 'AdihausDIN';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('AdihausDIN'), local('AdihausDIN-Regular'),
+       url('/fonts/AdihausDIN-Regular.woff2') format('woff2'),
+       url('/fonts/AdihausDIN-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'AdihausDIN';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('AdihausDIN'), local('AdihausDIN-Regular'),
+       url('/fonts/AdihausDIN-Bold.woff2') format('woff2'),
+       url('/fonts/AdihausDIN-Bold.woff') format('woff');
+}
