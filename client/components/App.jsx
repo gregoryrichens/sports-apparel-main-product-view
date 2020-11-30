@@ -13,7 +13,7 @@ import GlobalStyle from './GlobalStyles.jsx';
 
 const Content = styled.div`
     width: 100%;
-    min-height: 100vh;
+    min-height: 90vh;
     min-width: 0;
     position: relative;
   `;
